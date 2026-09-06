@@ -1,11 +1,5 @@
 import { useEffect, useRef } from "react";
 
-/**
- * Two low-key, site-wide touches that keep things feeling alive:
- *  - a soft gold dot that trails the cursor and grows over links/buttons
- *  - a fine grain overlay so large flat surfaces don't read as "render"
- * Both are tiny, palette-only, and disabled under prefers-reduced-motion.
- */
 function MotionFX() {
   const dotRef = useRef(null);
 
@@ -13,8 +7,8 @@ function MotionFX() {
     const dot = dotRef.current;
     if (!dot) return;
 
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
+    // skip on low-motion setups, the grain is enough
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let raf = 0;
     let tx = 0;

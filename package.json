@@ -2,6 +2,7 @@
   "name": "noir",
   "private": true,
   "version": "1.0.0",
+  "description": "Landing page for a fictional men's grooming house. Portfolio piece.",
   "type": "module",
   "scripts": {
     "dev": "vite",

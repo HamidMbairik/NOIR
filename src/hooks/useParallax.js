@@ -1,10 +1,7 @@
 import { useEffect, useRef } from "react";
 
-/**
- * Tiny parallax hook: offsets a wrapped element by a fraction of its own
- * distance from the viewport, so it drifts gently as you scroll.
- * Disabled under prefers-reduced-motion.
- */
+// drifts an element as it moves through the viewport. amount is a fraction
+// of the element's distance from screen centre. cheap enough to run per frame.
 function useParallax(amount = 0.06) {
   const ref = useRef(null);
 

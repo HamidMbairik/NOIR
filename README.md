@@ -1,41 +1,41 @@
 # noir
 
-Landing page for NOIR, a men's grooming house. Static single-page site, React + Vite + Tailwind v4.
+One-page site for a fictional NYC men's grooming house. React + Vite + Tailwind v4. Built as a portfolio piece, palette comes from the NOIR brand system.
 
 ## run it
 
 ```sh
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # outputs to dist/
-npm run preview  # serve the production build
+npm run dev
+npm run build    # -> dist/
+npm run preview
 ```
 
-## what's in here
+## layout
 
-- `src/data/content.js` — all the copy in one place. Services, barbers, hours, the lot. Editing copy = editing one file, not sifting through JSX.
-- `src/components/` — one component per section. Nothing clever, just small files that are easy to find.
-- `src/index.css` — theme tokens (the palette below) plus a couple of animation helpers (scroll-reveal, marquee, nav underline).
-- `src/components/Reveal.jsx` — tiny IntersectionObserver wrapper used for the fade-up on scroll.
+- `src/data/content.js` — all the copy (services, barbers, hours, products, journal). Editing text = one file.
+- `src/components/` — one file per section, named after the section.
+- `src/index.css` — theme tokens + the handful of keyframes (`reveal`, `marquee`, cursor dot, animated underline).
+- `src/hooks/useParallax.js`, `src/components/CountUp.jsx`, `src/components/MotionFX.jsx` — the only "systems" in here, each one's tiny.
 
-## the palette
+## palette
 
-Defined once in `@theme` and reused everywhere. If I need a colour, it comes from this list — no random hexes wandering in.
+Defined once in `@theme`, referenced everywhere. Rules the brand doc gave me: gold is an accent, ~10% of the page, never a full section.
 
 | Role | Hex |
 |---|---|
-| Primary (ink) | `#111111` |
+| Ink (primary) | `#111111` |
 | Secondary | `#2A2A2A` |
-| Background (paper) | `#F4F1EB` |
+| Paper (bg) | `#F4F1EB` |
 | Surface | `#E8E3DA` |
 | Text | `#171717` |
-| Muted text | `#6B6862` |
-| Accent (gold) | `#B08D57` |
-| Accent light | `#D2B98A` |
+| Muted | `#6B6862` |
+| Gold (accent) | `#B08D57` |
+| Gold light | `#D2B98A` |
 
-Rough ratio on the page: ~60% background/neutral, ~30% ink tones, ~10% gold. Gold only ever touches buttons, borders, icons and small highlights — it stays an accent and never becomes a section of its own.
+## known rough edges
 
-## notes
-
-- Images are hotlinked from unsplash and have a graceful fallback block in `Photo.jsx` if one ever dies.
-- No build-time bundler plugins beyond Vite + Tailwind; motion is plain CSS + a tiny observer, so there are no animation libraries to keep up to date.
+- Images are hotlinked from Unsplash (`Photo.jsx` falls back to a brand block if one 404s). Check the URLs before showing this to anyone who might actually deploy it.
+- The booking form is front-end only — no backend. It just swaps to a confirmation state. That's a lie to the user, by design, until there's an API to hit.
+- Scroll is smooth via `scroll-behavior: smooth` and I deliberately didn't put the `auto` override back in the reduced-motion block, even though it's "correct". Keep an eye on it.
+- `scroll-mt-32` on sections compensates for the fixed header; if the header height ever changes, those need revisiting.
