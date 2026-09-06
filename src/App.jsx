@@ -10,11 +10,13 @@ import Journal from "./components/Journal.jsx";
 import Booking from "./components/Booking.jsx";
 import Footer from "./components/Footer.jsx";
 import MotionFX from "./components/MotionFX.jsx";
+import SmoothScroll from "./components/SmoothScroll.jsx";
 
 export default function App() {
   return (
     <div className="min-h-screen">
       <MotionFX />
+      <SmoothScroll />
       <Navbar />
       <main>
         <Hero />

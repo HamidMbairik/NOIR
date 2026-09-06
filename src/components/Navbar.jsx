@@ -29,7 +29,11 @@ function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => (document.body.style.overflow = "");
+    if (window.__lenis) window.__lenis[open ? "stop" : "start"]();
+    return () => {
+      document.body.style.overflow = "";
+      if (window.__lenis) window.__lenis.start();
+    };
   }, [open]);
 
   return (

@@ -37,5 +37,5 @@ Defined once in `@theme`, referenced everywhere. Rules the brand doc gave me: go
 
 - Images are hotlinked from Unsplash (`Photo.jsx` falls back to a brand block if one 404s). Check the URLs before showing this to anyone who might actually deploy it.
 - The booking form is front-end only — no backend. It just swaps to a confirmation state. That's a lie to the user, by design, until there's an API to hit.
-- Scroll is smooth via `scroll-behavior: smooth` and I deliberately didn't put the `auto` override back in the reduced-motion block, even though it's "correct". Keep an eye on it.
+- Smooth scrolling is Lenis (`src/components/SmoothScroll.jsx`) driving the wheel / anchor jumps. It runs even for people with reduced-motion turned on, which is a deliberate fudge — the brief asked for smooth and I didn't want it silently dead on half the machines. `index.css` keeps `scroll-behavior: smooth` as a no-JS fallback.
 - `scroll-mt-32` on sections compensates for the fixed header; if the header height ever changes, those need revisiting.
