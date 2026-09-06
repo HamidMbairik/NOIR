@@ -1,5 +1,13 @@
 # NOIR — Modern Men's Grooming
 
+A one-page marketing site for a men's grooming house in New York. **React + Vite + Tailwind CSS v4.**
+
+```sh
+npm install
+npm run dev      # local server
+npm run build    # production build → dist/
+```
+
 **Brand personality:** Luxury, masculine, sophisticated, editorial.
 
 ## Design System
