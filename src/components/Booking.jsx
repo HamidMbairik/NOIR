@@ -169,9 +169,16 @@ function Booking() {
                     />
                   </div>
                   <div className="flex flex-wrap items-center justify-between gap-4 sm:col-span-2">
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-paper/35">
-                      Six services on the board, <span className="text-gold-light">{services.length} reasons to come back.</span>
-                    </p>
+                    <a
+                      href="#services"
+                      className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-paper/45 transition-colors hover:text-gold-light"
+                    >
+                      {services.length} services on the board
+                      <span className="underline decoration-gold/50 decoration-[1px] underline-offset-4 transition-colors group-hover:decoration-gold">
+                        — pick a reason to come back
+                      </span>
+                      <span className="text-gold transition-transform group-hover:translate-x-0.5">→</span>
+                    </a>
                     <button
                       type="submit"
                       className="group inline-flex items-center gap-3 bg-paper px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink transition-colors hover:bg-gold"
