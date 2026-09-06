@@ -1,11 +1,14 @@
 import Reveal from "./Reveal.jsx";
 import Photo from "./Photo.jsx";
+import useParallax from "../hooks/useParallax.js";
 import { brand } from "../data/content.js";
 import { Arrow, Clock, Diamond, MapPin } from "./Icons.jsx";
 
 function Hero() {
+  const imgWrap = useParallax(0.045);
+
   return (
-    <section id="top" className="relative overflow-hidden">
+    <section id="top" className="relative overflow-hidden pt-28">
       <div className="mx-auto max-w-6xl px-5 pb-16 pt-10 sm:pt-14 md:pb-24">
         <div className="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div>
@@ -35,7 +38,7 @@ function Hero() {
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <a
                   href="#booking"
-                  className="group inline-flex items-center gap-3 bg-ink px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-paper transition-colors hover:bg-gold"
+                  className="group inline-flex items-center gap-3 bg-ink px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-paper transition-colors hover:bg-gold hover:shadow-[0_2px_20px_rgba(176,141,87,0.45)]"
                 >
                   Book an appointment
                   <Arrow className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
@@ -67,14 +70,14 @@ function Hero() {
           </div>
 
           <Reveal delay={120} className="relative">
-            <div className="relative lg:ml-6">
-              <div className="absolute -right-3 -top-3 h-full w-full border border-gold/60" aria-hidden="true" />
+            <div ref={imgWrap} className="relative lg:ml-6" style={{ transform: "translateY(var(--parallax, 0))" }}>
+              <div className="absolute -right-3 -top-3 h-full w-full border border-gold/60 transition-transform duration-[2s] ease-[var(--ease-out-soft)] group-hover:scale-[1.015]" aria-hidden="true" />
               <Photo
                 src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1400&auto=format&fit=crop"
                 alt="The chair, Room Two"
                 caption="Room Two · Franklin Street"
                 eager
-                className="aspect-[4/5]"
+                className="aspect-[4/5] shadow-[var(--shadow-soft)]"
               />
             </div>
             <div className="mt-5 flex items-center justify-between border-t border-ink/10 pt-4 text-[10px] uppercase tracking-[0.25em] text-muted">

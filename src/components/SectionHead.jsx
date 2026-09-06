@@ -10,7 +10,7 @@ function SectionHead({ eyebrow, title, aside, dark = false }) {
               dark ? "text-gold-light/80" : "text-muted"
             }`}
           >
-            <span className="h-px w-8 bg-gold" />
+            <span className="rule-animate h-px w-8 bg-gold" />
             {eyebrow}
           </div>
           <h2

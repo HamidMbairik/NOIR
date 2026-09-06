@@ -18,10 +18,10 @@ function Services() {
           aside="Six services. Each one has a real job to do, and we'd rather do six well than twenty badly."
         />
 
-        <div className="grid gap-px bg-ink/10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <Reveal key={s.name} delay={(i % 3) * 80} className="bg-paper">
-              <article className="group relative flex h-full flex-col p-7 transition-transform duration-300 hover:-translate-y-1 md:p-8">
+            <Reveal key={s.name} delay={(i % 3) * 80} className="h-full">
+              <article className="group relative flex h-full flex-col border border-ink/8 bg-paper/70 p-7 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-lift)] md:p-8">
                 <div className="mb-8 flex items-start justify-between">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink transition-colors group-hover:border-gold group-hover:text-gold">
                     <Scissors className="h-4 w-4" />

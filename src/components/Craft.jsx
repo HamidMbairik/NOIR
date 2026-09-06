@@ -2,6 +2,7 @@ import { stats } from "../data/content.js";
 import SectionHead from "./SectionHead.jsx";
 import Reveal from "./Reveal.jsx";
 import Photo from "./Photo.jsx";
+import CountUp from "./CountUp.jsx";
 import { Diamond } from "./Icons.jsx";
 
 function Craft() {
@@ -20,12 +21,12 @@ function Craft() {
         />
 
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
-          <Reveal className="lg:col-span-5" delay={0}>
+          <Reveal className="group lg:col-span-5" delay={0}>
             <Photo
               src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200&auto=format&fit=crop"
               alt="Cut in progress"
               caption="Antoine cutting, Thursday rush"
-              className="aspect-[4/5]"
+              className="aspect-[4/5] overflow-hidden transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-[1.02]"
             />
           </Reveal>
 
@@ -55,7 +56,7 @@ function Craft() {
                 {stats.map((s) => (
                   <div key={s.label}>
                     <p className="font-display text-4xl font-medium text-paper">
-                      {s.value}
+                      <CountUp value={s.value} />
                       <span className="text-gold">.</span>
                     </p>
                     <p className="mt-2 max-w-[12rem] text-[11px] uppercase leading-relaxed tracking-[0.18em] text-paper/50">

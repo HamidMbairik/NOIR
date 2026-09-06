@@ -9,10 +9,12 @@ import Testimonials from "./components/Testimonials.jsx";
 import Journal from "./components/Journal.jsx";
 import Booking from "./components/Booking.jsx";
 import Footer from "./components/Footer.jsx";
+import MotionFX from "./components/MotionFX.jsx";
 
 export default function App() {
   return (
     <div className="min-h-screen">
+      <MotionFX />
       <Navbar />
       <main>
         <Hero />
