@@ -4,7 +4,7 @@ Landing page for a fictional men's grooming house in New York. Built as a portfo
 
 React, Vite, Tailwind CSS v4. The colour palette comes from the NOIR brand system.
 
-Live site: **https://HamidMbairik.github.io/NOIR/**
+Live site: **https://noir-blue.vercel.app/**
 
 ## Screenshots
 
