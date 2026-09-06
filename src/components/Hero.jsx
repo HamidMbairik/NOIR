@@ -69,7 +69,7 @@ function Hero() {
             </Reveal>
           </div>
 
-          <Reveal delay={120} className="relative">
+          <Reveal delay={120} className="group relative">
             <div ref={imgWrap} className="relative lg:ml-6" style={{ transform: "translateY(var(--parallax, 0))" }}>
               <div className="absolute -right-3 -top-3 h-full w-full border border-gold/60 transition-transform duration-[2s] ease-[var(--ease-out-soft)] group-hover:scale-[1.015]" aria-hidden="true" />
               <Photo
