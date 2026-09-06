@@ -20,7 +20,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* auto on purpose — CSS smooth conflicts with lenis, which now owns scroll easing */
+  scroll-behavior: auto;
 }
 
 body {
