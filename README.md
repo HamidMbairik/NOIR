@@ -55,3 +55,7 @@ Defined once in `@theme` and referenced everywhere. No stray hex values.
 - The booking form is front-end only. It swaps to a confirmation state; there's no backend behind it.
 - Smooth scrolling is Lenis; it runs even for people with reduced-motion on, a deliberate trade-off for this project.
 - `scroll-mt-32` on each section compensates for the fixed header. If the header height changes, those need a revisit.
+
+---
+
+**Built from scratch by [Hamid Mbairik](https://github.com/HamidMbairik) · [CorgaDev](https://corgadev.vercel.app) — custom websites, no templates.**
